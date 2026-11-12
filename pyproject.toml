@@ -1,0 +1,15 @@
+[build-system]
+requires = ["maturin>=1.5,<2"]
+build-backend = "maturin"
+
+[project]
+name = "jsonpatch-rs"
+version = "0.1.0"
+description = "Drop-in Rust speedup for python-json-patch: make_patch produces the identical patch, much faster"
+license = { text = "BSD-3-Clause" }
+requires-python = ">=3.11"
+dependencies = ["jsonpatch==1.47"]
+
+[tool.maturin]
+module-name = "jsonpatch_rs._core"
+python-source = "python"

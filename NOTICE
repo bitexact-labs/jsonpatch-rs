@@ -1,0 +1,12 @@
+jsonpatch-rs ports the diff algorithm of python-json-patch 1.47
+(https://github.com/stefankoegl/python-json-patch, BSD-3-Clause, Copyright (c) 2011 Stefan Kögl)
+from Python to Rust. The DiffBuilder logic (runs, moves, array labels, operation order) is translated
+line by line, so that the generated patches are identical.
+
+src/seqmatch.rs is a port of CPython's difflib.SequenceMatcher (PSF-2.0), used by the diff exactly
+like jsonpatch uses difflib.
+
+tests/upstream/ contains python-json-patch's own test files (BSD-3-Clause), unchanged, used to check
+that the accelerated module passes the original test suite.
+
+orig/ holds unmodified copies of jsonpatch.py and jsonpointer.py 1.47/3.12 (BSD-3-Clause, Stefan Kögl) for reference.
